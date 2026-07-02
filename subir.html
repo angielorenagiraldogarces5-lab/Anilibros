@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Subir nuevo libro</h1>
+    <form action="/subir" method="POST" enctype="multipart/form-data">
+        <input type="text" name="titulo" placeholder="Título" required><br><br>
+        <input type="text" name="autor" placeholder="Autor" required><br><br>
+        <input type="text" name="genero" placeholder="Género" required><br><br>
+        
+        <label>Portada:</label>
+        <input type="file" name="portada" accept="image/*" required><br><br>
+        
+        <textarea name="sinopsis" placeholder="Sinopsis del libro" rows="4" cols="50" required></textarea><br><br>
+        
+        <button type="submit">Guardar Libro</button>
+    </form>
+    <br>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

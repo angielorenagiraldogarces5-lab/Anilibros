@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Biblioteca Digital</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .filtros { margin: 20px 0; }
+        .btn-filtro { padding: 10px 15px; margin-right: 5px; text-decoration: none; border-radius: 5px; color: white; transition: background 0.3s; }
+        .activo { background-color: black; }
+        .inactivo { background-color: #ccc; }
+        .grid-libros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .libro-card { border: 1px solid #ddd; padding: 15px; text-align: center; border-radius: 8px; }
+        .libro-card img { width: 150px; height: 220px; object-fit: cover; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Mi Biblioteca Digital</h1>
+    <a href="/subir">+ Subir nuevo libro</a>
+
+    <!-- Buscador Integrado -->
+    <div style="margin: 20px 0;">
+        <form action="/" method="GET">
+            <input type="text" name="busqueda" placeholder="Buscar por título o autor..." value="{{ busqueda }}">
+            <button type="submit">Buscar</button>
+            <a href="/">Limpiar</a>
+        </form>
+    </div>
+
+    <div class="filtros">
+        {% for g in generos %}
+            <a href="/?genero={{ g }}" class="btn-filtro {{ 'activo' if g == filtro else 'inactivo' }}">{{ g }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="grid-libros">
+        {% for libro in libros %}
+        <div class="libro-card">
+            <img src="{{ libro.portada }}" alt="Portada">
+            <h3>{{ libro.titulo }}</h3>
+            <p>Autor: {{ libro.autor }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

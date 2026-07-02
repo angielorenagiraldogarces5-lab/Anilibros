@@ -1,0 +1,10 @@
+{
+    "ejemplo.jpg": {
+        "titulo": "El Principito",
+        "autor": "Antoine de Saint-Exupéry",
+        "genero": "Infantil",
+        "sinopsis": "Un pequeño príncipe viaja de planeta en planeta.",
+        "portada": "/static/uploads/ejemplo.jpg",
+        "orden": 1
+    }
+}
